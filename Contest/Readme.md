@@ -10,7 +10,8 @@ http://codeforces.com/blog/entry/44902
 
   D: TREE CONSTRUCTION
 
-  E: DP WHILST CREATING A SEGMENT TREE
+  E: DP WHILST CREATING A SEGMENT TREE  
+  
   
 CONTEST 722 (INTEL)  
 http://codeforces.com/contest/722  
