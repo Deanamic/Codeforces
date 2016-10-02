@@ -2,7 +2,6 @@ CF CONTEST PROBLEMS
 
 
 CONTEST 675
-
 http://codeforces.com/contest/675  
 http://codeforces.com/blog/entry/44902
 
@@ -11,6 +10,8 @@ http://codeforces.com/blog/entry/44902
   D: TREE CONSTRUCTION
 
   E: DP WHILST CREATING A SEGMENT TREE  
+  
+  ---------------------------------  
   
   
 CONTEST 722 (INTEL)  
