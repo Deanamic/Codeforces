@@ -1,7 +1,7 @@
 CF CONTEST PROBLEMS
 
 
-CONTEST 675
+CONTEST 675  
 http://codeforces.com/contest/675  
 http://codeforces.com/blog/entry/44902
 
