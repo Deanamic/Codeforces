@@ -14,6 +14,7 @@ http://codeforces.com/blog/entry/44902
   
 CONTEST 722 (INTEL)
 http://codeforces.com/contest/722  
+http://codeforces.com/blog/entry/47497  
 
-\t C: DESTRUCTION OF AN ARRAY  
+  C: DESTRUCTION OF AN ARRAY  
   D: GENERATING SUBSETS
