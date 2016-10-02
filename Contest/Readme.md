@@ -12,7 +12,7 @@ http://codeforces.com/blog/entry/44902
 
   E: DP WHILST CREATING A SEGMENT TREE
   
-CONTEST 722 (INTEL)
+CONTEST 722 (INTEL)  
 http://codeforces.com/contest/722  
 http://codeforces.com/blog/entry/47497  
 
