@@ -19,8 +19,9 @@ CONTEST 722 (INTEL)
 [Editorial Link](http://codeforces.com/blog/entry/47497)
 
   - C: DESTRUCTION OF AN ARRAY  
-  - D: GENERATING SUBSETS
+  - D: GENERATING SUBSETS  
 
-CONTEST 731
+  ---------------------------------  
+CONTEST 731  
 [Contest Link](http://codeforces.com/contest/731)  
 Editorial Link  
