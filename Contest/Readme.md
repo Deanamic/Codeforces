@@ -22,6 +22,7 @@ CONTEST 722 (INTEL)
   - D: GENERATING SUBSETS  
 
   ---------------------------------  
+  
 CONTEST 731  
 [Contest Link](http://codeforces.com/contest/731)  
 Editorial Link  
