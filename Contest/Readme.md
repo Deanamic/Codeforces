@@ -25,4 +25,5 @@ CONTEST 722 (INTEL)
   
 CONTEST 731  
 [Contest Link](http://codeforces.com/contest/731)  
-Editorial Link  
+[Editorial Link](http://codeforces.com/blog/entry/47840)  
+
