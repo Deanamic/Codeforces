@@ -1,3 +1,5 @@
+//solo tienes que devolver suma-v[i] en abs
+
 #include <bits/stdc++.h>
 using namespace std;
 
