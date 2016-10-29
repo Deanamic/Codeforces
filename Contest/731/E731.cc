@@ -1,6 +1,9 @@
 //solo tienes que devolver suma-v[i] en abs
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 int main(){
