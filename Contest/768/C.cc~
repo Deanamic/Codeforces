@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int x,k,n;
+  cin >> n >> k >> x;
+  vector<int> dp(2,vector<int> (1030,0));
+  int mn = 1030, mx = 0;
+  for(int i = 0; i < n; ++i){
+      int a;
+      cin >> a;
+      mn = min(mn,a);
+      mx = max(mx,a);
+      dp[0][a]++;
+  }
+  for(int i = 0; i < n; ++i){
+    int change = 0;
+    for(int j = 0; j < 1001; ++j){
+      if(change){
+	dp[(i+1)%2][j^x] += (dp[i%2][j])/2;
+	dp[(i+1)%2][j] += (dp[i%2][j]+1)/2;
+	mn = min(j^x,mn);
+	mx = max(mx,j^x);
+	if(dp[i%2][j] % 2){
+	  change = 0;
+	}
+	dp[i%2][j] = 0;
+      }
+      else{
+	dp[(i+1)%2][j] += (dp[i%2][j])/2;
+	dp[(i+1)%2][j^x] += (dp[i%2][j]+1)/2;
+	mn = min(j^x,mn);
+	mx = max(mx,j^x);
+	if(dp[i%2][j] % 2){
+	  change = 1;
+	}
+	dp[i%2][j] = 0;
+      }
+      cout << mx << ' ' << mn << endl;
+
+     }
+  }
+}
+  
+
+      
