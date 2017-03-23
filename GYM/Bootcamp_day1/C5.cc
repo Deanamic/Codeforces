@@ -2,119 +2,117 @@
 using namespace std;
 
 
-struct punto {
-	int x, y;
-	bool operator <(const punto &p) const {
-		return (x < p.x or (x == p.x and y < p.y));
-	}
+struct SparseTable {
+    vector<vector<int> > ST;
+    vector<int > P;
+    int N;
+    int MAXLOG = 0;
+
+    void build(int n, const vector<int>& V){
+        N = n;
+        while ((1 << MAXLOG) <= N) ++MAXLOG;
+        ST = vector<vector<int> > (N, vector<int> (MAXLOG));
+        P = vector<int> (N + 1);
+        int LOG = 0;
+        for (int i = 1; i < N + 1; ++i) {
+            P[i] = ((1 << LOG) > i ? LOG - 1 : ++LOG - 1);
+        }
+        // Dynamic Sparse table building
+        for (int i = 0; i < N; ++i) {
+            ST[i][0] = i;
+        }
+        for (int j = 1; j < MAXLOG; ++j) {
+            for (int i = 0; i + (1 << j) - 1 < N; ++i) {
+                if (V[ST[i][j - 1]] < V[ST[i + (1 << (j - 1))][j - 1]])
+                    ST[i][j] = ST[i][j - 1];
+                else
+                    ST[i][j] = ST[i + (1 << (j - 1))][j - 1];
+            }
+        }
+    } // build
+
+    int query(int l, int r, const vector<int>& V){
+        int LOG = P[r - l + 1];
+
+        // we need an interval range such the we can cover [l,r] with
+        // [l , l + 2^LOG) and [r - 2^LOG + 1, r+1)
+        // hence we need the maximum LOG, such that 2^LOG is smaller than
+        // the range or [l,r]
+        // Which has been preprocessed before
+        if (V[ST[l][LOG]] < V[ST[r - (1 << LOG) + 1][LOG]])
+            return ST[l][LOG];
+        return ST[r - (1 << LOG) + 1][LOG];
+
+    }
 };
 
+struct Tree {
+    vector<vector<int> > adj;
+    int V, E;
+    int LOG;
+    int root;
+    int t = 0;
+    vector<vector<int> > Eulerian_tour;
+    vector<int> time_in, time_out;
+    vector<int> Depth;
+    SparseTable S;
+    // This vectors will save the ith value in the eulerian tour and its depth
+    // And the first appereance of each node
+    // Note that Eulerian_tour and RMQ_reduction will have size 2*N -1
+    // We will root the tree at 0
 
-vector<punto> H;
-vector<punto> P;
+    void Eulerian_dfs(int p, int node, int depth){
+        if (time_in[node] == -1) time_in[node] = ++t;
+        if(Eulerian_tour.size() <= depth) Eulerian_tour.push_back(vector<int>());
+        Depth[node] = depth;
+        Eulerian_tour[depth].push_back(t);
+        for (int i = 0; i < adj[node].size(); ++i) {
+            if (adj[node][i] != p) {
+                Eulerian_dfs(node, adj[node][i], depth + 1);
+            }
+        }
+        time_out[node] = t++;
+    }
 
-// Producto vectorial
-// mayor que 0 si el giro es horario, igual 0 si es colinear,
-// menor que 0 si es antihorario
-int cross(const punto &O, const punto &A, const punto &B) {
-	return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
-}
+    void build(int n){
+        V = n;
+        E = n - 1;
+        int time = 0;
+        adj.resize(V);
+        Depth = time_in = time_out = vector<int> (V, -1);
+        for(int i = 0; i < V; ++i){
+            int x;
+            cin >> x;
+            if(x == -1) root = i;
+            else{
+                --x;
+                adj[x].push_back(i);
+            }
+        }
+        Eulerian_dfs(root, root, 0);
+    }
 
-// Devuelve la lista en sentido antihorario
-// El ultimo punto es igual al primero
-void convex_hull() {
-	int n = P.size(), k = 0;
-	H = vector<punto> (2*n);
+    int query(int l, int k){
+        int i = Depth[l] + k;
+        if(i >= Eulerian_tour.size()) return 0;
+        return lower_bound(Eulerian_tour[i].begin(), Eulerian_tour[i].end(), time_out[l]) -
+                lower_bound(Eulerian_tour[i].begin(), Eulerian_tour[i].end(), time_in[l]);
+    }
 
-	// ordenamos los puntos
-	sort(P.begin(), P.end());
-
-	// construimos la convexhull inferior
-	for (int i = 0; i < n; ++i) {
-		while (k >= 2 && cross(H[k-2], H[k-1], P[i]) <= 0) k--;
-		H[k++] = P[i];
-	}
-
-	// construimos la convexhull superior
-	for (int i = n-2, t = k+1; i >= 0; i--) {
-		while (k >= t && cross(H[k-2], H[k-1], P[i]) <= 0) k--;
-		H[k++] = P[i];
-	}
-	H.resize(k-1);
-}
-
+};
 
 int main(){
-    long long n,m;
-    double a;
-    cin >> n >> m >> a;
-    vector<int> v1,v2;
-    if(n*m < ceil(a) or (a != int(a) and floor(a) != a-0.5)){
-        return cout << -1 << endl, 0;
-    }
-    vector<int> p1(5),p2(5);
-    bool cut = (a != int(a));
-    if(a == 0.5){
-        cout << 3 << endl;
-        cout << "0 0\n0 1\n1 0\n";
-        return 0;
-    }
-    a = ceil(a);
-    bool reswap = 0;
-    if(n < m) {
-        swap(n,m);
-        reswap = 1;
-    }
-    int height = 0;
-    while(height * n < a) ++height;
-    int c = a - (height-1) * n;
-    if(cut){
-        v1.push_back(1);
-        v1.push_back(0);
-        v2.push_back(0);
-        v2.push_back(1);
-    }
-    else {
-        v1.push_back(0);
-        v2.push_back(0);
-    }
-    if(height*n == a){
-        v1.push_back(0);
-        v2.push_back(height);
-
-        v1.push_back(n);
-        v2.push_back(height);
-
-        v1.push_back(n);
-        v2.push_back(0);
-    }
-    else{
-        v1.push_back(0);
-        v2.push_back(height);
-
-        v1.push_back(c);
-        v2.push_back(height);
-
-        v1.push_back(n);
-        v2.push_back(height-1);
-
-        v1.push_back(n);
-        v2.push_back(1);
-
-        v1.push_back(c);
-        v2.push_back(0);
-
-
-    }
-    if(reswap) swap(v1,v2);
-    P.resize(v1.size());
-    for(int i = 0; i < v1.size(); ++i){
-        P[i] = {v1[i],v2[i]};
-    }
-    convex_hull();
-    cout << H.size() << endl;
-    for(int i = H.size() -1;i >= 0; --i){
-        cout << H[i].x << " " << H[i].y << endl;
+    int n;
+    cin >> n;
+    Tree T;
+    T.build(n);
+    int m;
+    cin >> m;
+    while(m--){
+        int l,k;
+        cin >> l >> k;
+        --l;
+        cout << T.query(l,k) << endl;
     }
 
 }
