@@ -4,7 +4,7 @@ mkdir debug
 mkdir caseout
 mkdir src
 mkdir data
-for let in {A..E}
+for let in {A..${1}}
 do
     touch src/${let}${num}.cc
     mkdir data/${let}testcases
