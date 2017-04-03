@@ -4,7 +4,7 @@ mkdir debug
 mkdir caseout
 mkdir src
 mkdir data
-for let in {A..${1}}
+for let in {A..Z}
 do
     touch src/${let}${num}.cc
     mkdir data/${let}testcases
@@ -14,4 +14,7 @@ do
     printf "\tios::sync_with_stdio(0);\n" >>  src/${let}${num}.cc
     printf "\tcin.tie(0);\n\n\n" >>  src/${let}${num}.cc
     printf "}\n" >>  src/${let}${num}.cc
+    if [[ ${let} = ${1} ]]; then
+	exit 1
+    fi
 done
