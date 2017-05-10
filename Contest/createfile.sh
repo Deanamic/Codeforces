@@ -1,13 +1,14 @@
 num=${PWD##*/}
 mkdir bin
 mkdir debug
-mkdir caseout
 mkdir src
 mkdir data
 for let in {A..Z}
 do
     touch src/${let}${num}.cc
-    mkdir data/${let}testcases
+    mkdir data/${let}
+    mkdir data/${let}/test
+    mkdir data/${let}/ans
     printf "#include<bits/stdc++.h>\n" >>  src/${let}${num}.cc
     printf "using namespace std;\n\n" >>  src/${let}${num}.cc
     printf "int main(){\n" >>  src/${let}${num}.cc

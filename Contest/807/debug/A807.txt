@@ -1,7 +1,0 @@
-src/A807.cc: In function ‘int main()’:
-src/A807.cc:8:18: error: ‘ch’ was not declared in this scope
-  bool rated = 0; ch = 0;
-                  ^~
-src/A807.cc:11:7: error: ‘i’ was not declared in this scope
-  for (i = 0; i < n; i++) {
-       ^
