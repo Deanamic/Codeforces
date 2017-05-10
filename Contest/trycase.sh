@@ -12,9 +12,9 @@ do
     do
         file=test${cont}
         echo "Running test ${cont}"
-        bin/${let}.out < ${DIR}/test/${file} > ${DIR}/ans/out${cont}
+        bin/${let}.out < ${DIR}/test/${file} > ${DIR}/out/out${cont}
         if [ -e ${DIR}/ans/ans${cont} ]; then
-            if cmp -s ${DIR}/ans/ans${cont} ${DIR}/ans/out${cont} ; then
+            if cmp -s ${DIR}/ans/ans${cont} ${DIR}/out/out${cont} ; then
                 echo "TEST ${cont}:${RED} WRONG ANSWER ${NC}"
             else
                 echo "TEST ${cont}:${GREEN} ACCEPTED ${NC}"
