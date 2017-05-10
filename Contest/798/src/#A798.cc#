@@ -1,4 +1,4 @@
-#include<unor
+#include <unordered_map>
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -18,3 +18,4 @@ int main(){
 	if(dif == 1 or (s.size()%2 and dif == 0)) cout << "YES" << endl;
 	else cout << "NO" << endl;
 }
+#include<un

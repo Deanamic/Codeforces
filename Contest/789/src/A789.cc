@@ -11,5 +11,5 @@ int main(){
         ans += (x+k-1)/k;
     }
     cout << (ans+1)/2 << endl;
-
+    co
 }
