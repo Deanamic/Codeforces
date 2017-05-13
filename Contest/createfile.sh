@@ -10,6 +10,12 @@ do
     mkdir data/${let}/test
     mkdir data/${let}/ans
     mkdir data/${let}/out
+    cont=1
+    for file in {1..5..1}
+    do
+        touch data/${let}/test/test${file}
+        touch data/${let}/ans/ans${file}
+    done
     printf "#include<bits/stdc++.h>\n" >>  src/${let}${num}.cc
     printf "using namespace std;\n\n" >>  src/${let}${num}.cc
     printf "int main(){\n" >>  src/${let}${num}.cc
