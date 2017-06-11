@@ -1,32 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-vector<vector<int> >  app(5001);
-vector<int> l(5001,-1), f(5001,-1);
+vector<int> la(5010), fi(5010);
 vector<int> v;
-
-int getans(int i, int j){
-	if(i >= j) return 0;
-	if(f[v[i]] < i) return 0;
-	vector<int> see(5001,0);
-	int x = 0;
-	int furt = l[v[i]];
-	for(int I = i; I <= furt; ++I){
-		see[v[I]] = 1;
-		if(i > f[v[I]]) return 0;
-		furt = max(furt, l[v[I]]);
-	}
-	if(furt >= j) return 0;
-	for(int I = 0; I < 5001; ++I){
-		if(see[I]) x ^= I;
-
-	}
-	int ans = 0;
-	for(int I = 0; I < app[v[i]].size() ; ++I){
-		ans += getans( app[v[i]][I] + 1, app[v[i]][I+1]);
-	}
-	return max(x + getans(furt + 1, j), ans);
-}
+vector<int> dp;
 
 int main(){
 	ios::sync_with_stdio(0);
@@ -34,14 +11,34 @@ int main(){
 	int n;
 	cin >> n;
 	v.resize(n);
+	dp.resize(n,0);
 	for(int i = 0; i < n; ++i){
 		cin >> v[i];
-		if(f[v[i]] == -1) f[v[i]] = i;
-		l[v[i]] = i;
-		app[v[i]].push_back(i);
 	}
 	for(int i = 0; i < n; ++i){
-		app[i].push_back(n);
+		la[v[i]] = i;
 	}
-	cout << getans(0,n) << endl;
+	for(int i = n-1; i >= 0; --i){
+		fi[v[i]] = i;
+	}
+
+	for(int i = 0; i < n; ++i) {
+		if(i) dp[i] = max(dp[i-1], dp[i]);
+		bool can = 1;
+		int l = fi[v[i]];
+		int r = la[v[i]];
+		int ans = 0;
+		if(i == r) {
+			vector<int> app(5010,0);
+			for(int j = r; can and j >= l; --j){
+				if(!app[v[j]]) ans ^= v[j];
+				app[v[j]] = 1;
+				if(la[v[j]] > r) can = 0;
+				l = min(l, fi[v[j]]);
+			}
+			if(can) dp[i] = max(dp[i], (l > 0 ? dp[l-1] : 0) + ans);
+		}
+
+	}
+	cout << dp[n-1] << endl;
 }

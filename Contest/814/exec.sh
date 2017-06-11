@@ -1,1 +1,1 @@
-./bin/${1}.out -DLOCAL
+./bin/${1}.out
