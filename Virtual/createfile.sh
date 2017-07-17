@@ -3,6 +3,7 @@ mkdir bin
 mkdir debug
 mkdir src
 mkdir data
+touch Readme.md
 for let in {A..Z}
 do
     touch src/${let}${num}.cc
