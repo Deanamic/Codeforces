@@ -1,4 +1,0 @@
-src/BYandex.cc: In function ‘int main()’:
-src/BYandex.cc:17:60: error: expected ‘)’ before ‘{’ token
-  while(p1 >= a and (clock()-t)/double(CLOCKS_PER_SEC < 1.9){
-                                                            ^
