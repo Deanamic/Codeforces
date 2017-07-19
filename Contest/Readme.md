@@ -2,7 +2,7 @@ CF CONTEST PROBLEMS
 
 CONTEST 675  
 [Contest link](http://codeforces.com/contest/675)  
-[Editorial link](http://codeforces.com/blog/entry/44902)
+[Editorial link](http://codeforces.com/blog/entry/44902)  
 [Folder link](Contest/CF675)
 
   ---------------------------------  
