@@ -23,7 +23,7 @@ We are sure we can be the left child of this node, except the case where it alre
 Complexity: O(nlogn)  
 
 - [x] Problem E  
-We are given N train stasions, from the i-th one you can reach to [i+1,a<sub>i</sub>] with one ticket. Let p<sub>i,j<sub> be the minimum number of tickets we need to go from station i to station j. We are asked to compute the sum over all i,j i < j.
+We are given N train stasions, from the i-th one you can reach to [i+1,a<sub>i</sub>] with one ticket. Let p<sub>i,j</sub> be the minimum number of tickets we need to go from station i to station j. We are asked to compute the sum over all i,j i < j.
 Lets consider train station i. we can go to [i+1,a<sub>i</sub>], with one ticket. If we want to reach (a<sub>i</sub>, n] we will have to commute to a station in our reachable interval. To find the optimal station to go, we have to observe that a station is better than another iff the range it can reach is larger, hence we are also guaranteed that the train station t<sub>op</sub> to do the commute can reach [t<sub>op</sub> + 1,a<sub>i</sub>] in one step.  
 Given that, the cost to visit the rest of the stations passing through the j-th station is:  
 (n - a<sub>i</sub>) - (a<sub>i</sub> - j) + (a<sub>i</sub> - i)+ dp[j].
