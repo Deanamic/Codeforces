@@ -5,7 +5,6 @@ int main (){
     int x,y;
     cin >> x >> y;
     int s1,s2,s3;
-
     s1 = s2 = s3 = min(x,y);
     y = max(x,y);
     x = s1;
