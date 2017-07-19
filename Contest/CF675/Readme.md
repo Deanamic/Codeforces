@@ -28,5 +28,6 @@ Lets consider train station i. we can go to [i+1,a<sub>i</sub>], with one ticket
 Given that, the cost to visit the rest of the stations passing through the j-th station is:  
 (n - a<sub>i</sub>) - (a<sub>i</sub> - j) + (a<sub>i</sub> - i)+ dp[j].
 where dp[j] it the sum of p<sub>j,k</sub> for all k.  
+and each term is: The places we can go directly, the places we go parring through j, the steps from j to [j+1, n], minus the steps needed to go to [j+1, a<sub>i</sub>] (1 step from j as we have probved above).  
 To find the optimal j we can simply use a segment tree and search for the one with largest range.  
 Complexity: O(nlogn)  
