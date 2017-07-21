@@ -15,6 +15,6 @@ Solution: The key observation is that if the words are sorted then i < i + 1, th
 This is easy to compute, after having this information we just have to check the intersection of these intervals which can be done in O(n) with prefix sums, adding 1 when interval starts and substracting 1 when interval ends. Then we check if for some i, pref[i] == n-1.  
 Complexity: O(n)
 
-- [ ] Problem E  
+- [x] Problem E  
 
 - [ ] Problem F  
