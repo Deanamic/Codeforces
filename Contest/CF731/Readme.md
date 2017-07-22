@@ -16,10 +16,7 @@ This is easy to compute, after having this information we just have to check the
 Complexity: O(n)
 
 - [x] Problem E  
-<<<<<<< HEAD
 Solution: At any point in the array we have sum(0, i), a<sub>i+1</sub> .. a<sub>n</sub>. We can easily that the amount of stickers left doesn't depend on anything but the index, hence we can see the problem as a dp problem where dp[i] = max(sum(0, j) - dp[j]). This is a O(n<sup>2</sup>), easily optimized to O(n).
-=======
->>>>>>> ac9cadb327704de538ba0423f1abc7076a798dbb
 
 - [x] Problem F  
 You can simply bruteforce the answer, remember that (n/1 + n/2 + ... + n/n) is nlog(n).
