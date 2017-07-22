@@ -1,8 +1,8 @@
-CONTEST Codeforces 712 Round 370 Div 2
+CONTEST Codeforces 731 Round 370 Div 2
 
 [Contest link](http://codeforces.com/contest/731)  
-[Editorial link](http://codeforces.com/blog/entry/47050)  
-[Folder link](CF712)
+[Editorial link](http://codeforces.com/blog/entry/47840  
+[Folder link](CF731)
 
 - [x] Problem A  
 
