@@ -28,11 +28,7 @@ Codeforces 735 Round 382 Div 2
 
   ---------------------------------  
 
-<<<<<<< HEAD
 Codeforces 740 Round 381 Div 2  
-=======
-Codeforces 740 Round 381 Div 2
->>>>>>> ff49b13d1c7293b8163bec43475066ce5b2df0d6
 [Contest link](http://codeforces.com/contest/740)  
 [Editorial link](http://codeforces.com/blog/entry/48582)  
 [Folder link](CF725)  
