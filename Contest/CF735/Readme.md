@@ -2,7 +2,6 @@ CONTEST Codeforces 735 Round 382 Div 2
 
 [Contest link](http://codeforces.com/contest/735)  
 [Editorial link](http://codeforces.com/blog/entry/48659)  
-[Folder link](CF725)
 
 - [x] Problem A  
 
