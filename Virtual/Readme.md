@@ -2,7 +2,7 @@
 
 Contest CF613 round 339 Div1  
 [Contest](http://codeforces.com/contest/613)  
-[Editorial](http://codeforces.com/blog/entry/22832)
+[Editorial](http://codeforces.com/blog/entry/22832)  
 [Folder](CF613)  
 
   ---------------------------------  
