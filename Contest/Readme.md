@@ -33,10 +33,16 @@ Codeforces 740 Round 381 Div 2
 [Editorial Link](http://codeforces.com/blog/entry/48582)  
 [Folder Link](CF740)  
 
-
   ---------------------------------  
 
 Atcoder Grand Contest 018  
 [Contest Link](http://agc018.contest.atcoder.jp/)  
 [Editorial Link](https://atcoder.jp/img/agc018/editorial.pdf)  
 [Folder Link](ACG018)  
+
+  ---------------------------------  
+
+Atcoder Regular Contest 079
+[Contest Link](http://arc079.contest.atcoder.jp/)  
+[Editorial Link](https://atcoder.jp/img/arc079/editorial.pdf)  
+[Folder Link](ARC079)  
