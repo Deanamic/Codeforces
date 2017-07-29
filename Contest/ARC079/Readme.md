@@ -8,5 +8,5 @@ Atcoder Regular Contest 079
 
 - [x] Problem E  
 
-- [ ] Problem F  
-If the graph were a tree the gruedy values would be fixed, given that there is 1 cycle, we can check the 2 possible values of a node in the cycle.  
+- [x] Problem F  
+If the graph were a tree the gruedy values would be fixed, given that there is 1 cycle, we can check the 2 possible values of a node in the cycle.  Must be careful as the graph can have self edges.
