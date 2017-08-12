@@ -42,7 +42,21 @@ Atcoder Grand Contest 018
 
   ---------------------------------  
 
-Atcoder Regular Contest 079
+Atcoder Regular Contest 080  
+[Contest Link](http://arc080.contest.atcoder.jp/)  
+[Editorial Link](https://atcoder.jp/img/arc080/editorial.pdf)  
+[Folder Link](ARC080)  
+
+  ---------------------------------  
+
+Atcoder Regular Contest 079  
 [Contest Link](http://arc079.contest.atcoder.jp/)  
 [Editorial Link](https://atcoder.jp/img/arc079/editorial.pdf)  
-[Folder Link](ARC079)  
+[Folder Link](ARC079)   
+
+  ---------------------------------  
+
+Codeforces 839 Round 428 Div 2  
+[Contest Link](http://codeforces.com/contest/839)  
+[Editorial Link]
+[Folder Link](CF839)  
