@@ -1,5 +1,4 @@
-tion
-Contest ARC068 Atcoder Regular Contest  
+28/07 Contest ARC068 Atcoder Regular Contest  
 [Contest Link](http://arc068.contest.atcoder.jp)  
 [Editorial Link](https://atcoder.jp/img/arc068/editorial.pdf)  
 

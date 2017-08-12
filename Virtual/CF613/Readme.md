@@ -1,4 +1,7 @@
-07/17 [CF 613 round 339 Div1](http://codeforces.com/contest/613)
+07/17 CF 613 round 339 Div1  
+
+[Contest](http://codeforces.com/contest/613)  
+[Editorial Link](http://codeforces.com/blog/entry/22832)  
 
 - [x] Problem A  
 The problem reduces to the following:  
