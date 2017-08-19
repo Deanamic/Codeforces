@@ -4,11 +4,12 @@ using namespace std;
 int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	int n = 3;
-	cout << n << endl;
-	int s = 0;
+	int n;
+	cin >> n;
 	for(int i = 0; i < n; ++i){
-		cout << 1000000000 << ' ';
+		int x;
+		cin >> x;
+		if(x&1) return cout << "First" << endl, 0;
 	}
-	cout << endl;
+	cout << "Second" << endl;
 }
