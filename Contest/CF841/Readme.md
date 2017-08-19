@@ -18,6 +18,7 @@ Let's observe how we can update our dp.
   - From this K spots, L will be between 2 equivalent elemens, L will range from 0 to the minimum of j and k.  
   - We will choose how many objects we will put in each of the K spots (at least one)
   - As order matters, we will choose all permutations of the i-th group.  
+  
 The number of ways to do this is: (j choose L) * (X + 1 - j choose K - L) * (f[i] - 1 choose K - 1) * f[i]!  
 And after adding this we will add the value to dp[i+1][j - L + f[i] - K]  
   - If we put all elements together, we create f[i]-1 adjacent equivalet elements, for each extra spot we create one less.  
