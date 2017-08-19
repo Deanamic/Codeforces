@@ -60,3 +60,10 @@ Codeforces 839 Round 428 Div 2
 [Contest Link](http://codeforces.com/contest/839)  
 [Editorial Link](http://codeforces.com/blog/entry/53815)  
 [Folder Link](CF839)  
+
+  ---------------------------------  
+
+Codeforces 841 Round 429 Div 2  
+[Contest Link](http://codeforces.com/contest/841)  
+[Editorial Link]()  
+[Folder Link](CF841)  
