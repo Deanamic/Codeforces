@@ -77,9 +77,7 @@ int main(){
 						cur *= fact[f[i]];
 						mod(cur);
 						dp[i][j + f[i] - k - l] +=  cur;
-						//cerr << dp[i][j + f[i] - k - l] << endl;
 						mod(dp[i][j + f[i] - k - l]);
-						//cerr << dp[i][j + f[i] - k - l] << endl;
 					}
 				}
 			}
