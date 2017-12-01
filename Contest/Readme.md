@@ -67,3 +67,17 @@ Codeforces 841 Round 429 Div 2
 [Contest Link](http://codeforces.com/contest/841)  
 [Editorial Link]()  
 [Folder Link](CF841)  
+
+  ---------------------------------  
+
+Atcoder Regular Contest 081  
+[Contest Link](http://arc081.contest.atcoder.jp/)  
+[Editorial Link](https://atcoder.jp/img/arc081/editorial.pdf)  
+[Folder Link](ARC081)  
+
+---------------------------------  
+
+Codeforces 845 Educational 27 
+[Contest Link](http://codeforces.com/contest/845)  
+[Editorial Link]()  
+[Folder Link](CF845)  
